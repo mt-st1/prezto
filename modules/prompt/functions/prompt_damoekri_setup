@@ -41,12 +41,13 @@ function prompt_damoekri_setup {
   add-zsh-hook precmd prompt_damoekri_precmd
 
   # Set editor-info parameters.
-  zstyle ':prezto:module:editor:info:keymap:primary' format ' %F{green}»%f'
+  # zstyle ':prezto:module:editor:info:keymap:primary' format ' %F{green}»%f'
+  zstyle ':prezto:module:editor:info:keymap:primary' format ' %F{white}❯%F{cyan}❯%F{red}❯%f'
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
   zstyle ':prezto:module:git:info:action' format ':%F{magenta}%s%f'
-  zstyle ':prezto:module:git:info:branch' format '%F{blue}%b%f'
+  zstyle ':prezto:module:git:info:branch' format '%F{yellow}%b%f'
   zstyle ':prezto:module:git:info:clean' format ' %F{green}✔%f'
   zstyle ':prezto:module:git:info:dirty' format ' %F{red}✗%f'
   zstyle ':prezto:module:git:info:commit' format '%F{blue}%.7c%f'
@@ -58,7 +59,8 @@ function prompt_damoekri_setup {
   zstyle ':prezto:module:ruby:info:version' format ' %F{yellow}%v%f'
 
   # Define prompts.
-  PROMPT='%F{cyan}${_prompt_damoekri_pwd}%f${editor_info[keymap]} '
+  # PROMPT='%F{cyan}${_prompt_damoekri_pwd}%f${editor_info[keymap]} '
+  PROMPT='%F{white}${_prompt_damoekri_pwd}%f${editor_info[keymap]} '
   RPROMPT='${git_info:+${(e)git_info[rprompt]}}${ruby_info:+${ruby_info[version]}}'
 }
 
